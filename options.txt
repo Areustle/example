@@ -1,0 +1,28 @@
+
+
+What option best describes the requirements we want for: ScienceTools, ST-User,
+GlastRelease, The L1 pipeline, the code shared by all?
+
+## Strict Dependence ##
+
+1) All should always use the same shared code base. Changes that benefit ST but
+break GR will not be permitted into ST. External dependency versions must be in
+sync, and each product shall depend on the same version of shared FERMI code.
+
+2) All should use the same shared FERMI code base, but external dependency
+versions may change. Changes that benefit ST but break any other will not be
+permitted into ST. External dependency versions may vary, but API's must be in
+sync. If an API change breaks the some, but is required for another, all tools
+should be updated to use it.
+
+3)
+
+
+
+## Strict Independence ##
+
+All should be entirely independent of one another. Changes to
+ST/Likelihood should be permitted if they do not break ST, but should have no
+expectation of needing to work on GR. Maybe oneday they will be added to GR,
+but it is not an immediate requirement.
+
